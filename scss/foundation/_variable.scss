@@ -1,0 +1,19 @@
+// font-color
+$main-color: #858585;
+
+// font-size
+$main-font-size: 1.6rem;
+$title-font-size: calc(5rem + (100 - 50) * (100vw - 380px) / (1920 - 380));
+$responsive-main-font-size: 1.3rem;
+
+// font-family
+$main-font: "Noto Serif JP", serif;
+
+// line-height
+$base-line-height: 2.5rem;
+
+// background-color
+$about-back-color: #373737;
+
+// margin, padding
+$section-space: calc(5rem + (150 - 50) * (100vw - 380px) / (1920 - 380));

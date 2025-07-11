@@ -1,0 +1,71 @@
+@use "../../foundation" as *;
+
+.p-work {
+  padding-bottom: $section-space;
+  &__title {
+    &-wrap {
+      padding-left: 3rem;
+    }
+    &-text {
+      font-size: $title-font-size;
+    }
+  }
+  &__content {
+    overflow: hidden;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    &-link {
+      filter: grayscale(1) brightness(0.5);
+      transition: filter 0.7s;
+      &:hover {
+        filter: grayscale(0) brightness(1);
+      }
+    }
+    &-img {
+      max-width: calc(33rem + (650 - 330) * ((100vw - 380px) / (1920 - 380)));
+      height: calc(20rem + (400 - 200) * ((100vw - 380px) / (1920 - 380)));
+      object-fit: cover;
+      transition: 0.5;
+    }
+  }
+  &__show {
+    text-align: center;
+    padding-top: 2rem;
+    &-link {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      color: $main-color;
+      font-size: $main-font-size;
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: -5px;
+        left: 50%;
+        width: 10%;
+        height: 1px;
+        background-color: $main-color;
+        transition: width 0.3s;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: -5px;
+        right: 50%;
+        width: 10%;
+        height: 1px;
+        background-color: $main-color;
+        transition: width 0.3s;
+      }
+      &:hover {
+        &::before,
+        &::after {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use "../../foundation" as *;
+
+.p-about {
+  padding-bottom: $section-space;
+  font-size: $main-font-size;
+  @include breakpoint(tablet) {
+    font-size: $responsive-main-font-size;
+  }
+  &__inner {
+    padding-inline: 2rem;
+  }
+  &__title {
+    &-text {
+      font-size: $title-font-size;
+      text-align: center;
+    }
+  }
+  &__detail {
+    &-list {
+      text-align: center;
+      line-height: $base-line-height;
+      @include breakpoint(tablet) {
+        text-align: left;
+      }
+    }
+    &-heading {
+      padding-block: 3rem 1rem;
+    }
+    &-skill {
+      max-width: 4rem;
+      background-color: #858585;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "../../foundation" as *;
+
+.c-header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2rem;
+  }
+  &__title {
+    &-link {
+      color: $main-color;
+      font-size: 1.5rem;
+    }
+  }
+  &__menu {
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      a {
+        color: $main-color;
+      }
+    }
+  }
+}

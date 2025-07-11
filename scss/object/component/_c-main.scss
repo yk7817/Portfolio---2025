@@ -1,0 +1,26 @@
+@use "../../foundation" as *;
+
+.c-main {
+  &-visual {
+    height: 100vh;
+    position: relative;
+    &__canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+    &__title {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 59%;
+      left: 51%;
+      font-size: 4.5rem;
+      @include breakpoint(laptop) {
+        font-size: 2.5rem;
+        top: 56%;
+      }
+    }
+  }
+}

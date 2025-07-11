@@ -1,0 +1,41 @@
+@use "../../foundation/" as *;
+
+.p-category {
+  padding-top: 5rem;
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 2rem;
+  }
+  &__title {
+    &-text {
+      text-align: center;
+      font-size: $title-font-size;
+    }
+  }
+  &__work {
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      padding: 0;
+      gap: 3rem 5rem;
+      @include breakpoint(laptop) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    &-wrap {
+      padding-block: calc(3rem + (100 - 30) * (100vw - 380px) / (1920 - 380));
+    }
+    &-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(1);
+      transition: filter 0.3s;
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

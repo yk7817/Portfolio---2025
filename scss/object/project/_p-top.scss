@@ -1,0 +1,23 @@
+@use "../../foundation" as *;
+
+.p-top {
+  &__reverse-button {
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    width: 3rem;
+    height: 4rem;
+    border-top: 1px solid $main-color;
+    border-left: 1px solid $main-color;
+    transform: matrix(1, 1, 0, 2, 0, 0);
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    &.is-show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

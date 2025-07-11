@@ -1,0 +1,26 @@
+@use "variable" as *;
+
+*,
+*::after,
+*::before {
+  text-decoration: none;
+  list-style: none;
+}
+html {
+  font-size: 62.4%;
+  font-family: $main-font;
+  color: $main-color;
+}
+body {
+  position: relative;
+}
+dd {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+h2 {
+  margin: 0;
+}
