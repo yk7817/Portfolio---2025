@@ -158,7 +158,7 @@
                     <?php wp_nonce_field("cf_nonce_action", "cf_nonce_field"); ?>
                     <p>
                         <label for="cf_name">Name</label><br>
-                        <input type="text" id="cf_name" name="cf_name">
+                        <input type="text" id="cf_name" name="cf_name" required>
                     </p>
                     <p>
                         <label for="cf_email">Mail</label><br>
