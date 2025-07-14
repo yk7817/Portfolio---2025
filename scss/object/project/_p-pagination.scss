@@ -1,0 +1,21 @@
+@use "../../foundation/" as *;
+
+.p-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 2rem;
+  }
+  &__link {
+    color: $main-color;
+    font-size: $sub-font-size;
+    &.is-current {
+      color: #fff;
+    }
+  }
+}

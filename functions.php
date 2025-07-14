@@ -29,3 +29,32 @@ function register_menus() {
     ));
 }
 add_action('after_setup_theme', 'register_menus');
+
+
+// ページネーション
+function custom_pagination($query = null) {
+    global $wp_query;
+    $query = $query ?: $wp_query;
+
+    $total_pages = $query->max_num_pages;
+    $current_page = max(1, get_query_var("paged"));
+
+    if($total_pages > 1) {
+        echo '<nav class="p-pagination">';
+        echo '<ul class="p-pagination__list">';
+        
+        for($i = 1; $i <= $total_pages; $i++){
+            if($i === $current_page){
+                echo '<li class="p-pagination__list-item"><span class="p-pagination__link is-current">' . esc_html($i) . '</span></li>';
+            }else {
+                echo '<li class="p-pagination__list-item"><a class="p-pagination__link" href="' . esc_url(get_pagenum_link($i)) . '">' . esc_html($i) . '</a></li>';
+            }
+        }
+    echo '</ul>';
+    echo '</nav>';
+    }
+}
+
+
+// サムネイル出力時、sizesが自動挿入されないよう抑制
+add_filter("wp_calculate_image_sizes", "__return_false");

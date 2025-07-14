@@ -12,6 +12,7 @@
         $message = sanitize_textarea_field($_POST["cf_message"]);
 
         if(empty($name) || empty($email) || empty($message)) {
+            wp_redirect(home_url('/#p-contact'));
             $form_error = "すべての項目を入力してください。";
         } elseif(!is_email($email)) {
             $form_error = "有効なメールアドレスを入力してください。";
@@ -58,7 +59,7 @@
                         <ul class="p-work__list" id="js-work">
                             <?php while (have_posts()) : the_post(); ?>
                                 <li class="p-work__item js-item">
-                                    <a href="<?php the_field("url")?>" class="p-work__item-link">
+                                    <a href="<?php the_field("url")?>" target="_blank" class="p-work__item-link">
                                         <?php the_post_thumbnail("", ["class" => "p-work__item-img"]);?>
                                     </a>
                                 </li>
@@ -106,13 +107,13 @@
                         スキル：
                     </dt>
                     <dd class="p-about__detail-description">
-                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/html5.svg"))?>">
-                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/css.svg"))?>">
-                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/sass.svg"))?>">
-                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/javascript.svg"))?>">
-                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/wordpress.svg"))?>">
-                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/python.svg"))?>">
-                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/figma.svg"))?>">
+                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/html5.svg"))?>" alt="html">
+                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/css.svg"))?>" alt="css">
+                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/sass.svg"))?>" alt="sass scss">
+                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/javascript.svg"))?>" alt="javascript">
+                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/wordpress.svg"))?>" alt="wordpress">
+                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/python.svg"))?>" alt="python">
+                        <img class="p-about__detail-skill" src="<?php echo esc_url(get_theme_file_uri("./img/top/figma.svg"))?>" alt="figma">
                     </dd>
                     <dt class="p-about__detail-heading">
                         自己紹介：
@@ -161,11 +162,11 @@
                     </p>
                     <p>
                         <label for="cf_email">Mail</label><br>
-                        <input type="email" id="cf_email" name="cf_email">
+                        <input type="email" id="cf_email" name="cf_email" required>
                     </p>
                     <p>
                         <label for="cf_message">Message</label><br>
-                        <textarea name="cf_message" id="cf_message"></textarea>
+                        <textarea name="cf_message" id="cf_message" required></textarea>
                     </p>
                     <p>
                         <input type="hidden" name="cf_submitted" value="1">

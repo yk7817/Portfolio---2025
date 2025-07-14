@@ -322,4 +322,36 @@ h2 {
 .p-top__reverse-button.is-show {
   opacity: 1;
   visibility: visible;
+}
+
+.p-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.p-pagination__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  gap: 2rem;
+}
+.p-pagination__link {
+  color: #858585;
+  font-size: 1.4rem;
+}
+.p-pagination__link.is-current {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */
